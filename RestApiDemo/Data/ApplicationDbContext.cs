@@ -15,6 +15,7 @@ namespace RestApiDemo.Data
 
         }
         public DbSet<NationalPark> nationalParks { get; set; }
+        public DbSet<Trial> trial { get; set; }
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }

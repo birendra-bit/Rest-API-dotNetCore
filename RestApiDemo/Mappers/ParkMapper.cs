@@ -14,6 +14,9 @@ namespace RestApiDemo.Mappers
         public ParkMapper()
         {
             CreateMap<NationalPark, NationalParkDto>().ReverseMap();
+            CreateMap<Trial, TrialDto>().ReverseMap();
+            CreateMap<Trial, TrialCreateDto>().ReverseMap();
+            CreateMap<Trial, TrialUpdateDto>().ReverseMap();
         }
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

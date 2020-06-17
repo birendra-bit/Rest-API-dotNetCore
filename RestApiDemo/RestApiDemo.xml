@@ -39,5 +39,40 @@
             <param name="id">supply id to delete detail</param>
             <returns></returns>
         </member>
+        <member name="M:RestApiDemo.Controllers.TrailsController.GetTrials">
+            <summary>
+            get list of all national parks.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiDemo.Controllers.TrailsController.GetTrial(System.Int32)">
+            <summary>
+            get national park using id
+            </summary>
+            <param name="id"> The id of national park </param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiDemo.Controllers.TrailsController.CreateTrial(RestApiDemo.Modals.Dtos.TrialCreateDto)">
+            <summary>
+            post national park details
+            </summary>
+            <param name="trialDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiDemo.Controllers.TrailsController.UpdateTrial(System.Int32,RestApiDemo.Modals.Dtos.TrialUpdateDto)">
+            <summary>
+            Upate national park details
+            </summary>
+            <param name="id">supply id of park detail to update</param>
+            <param name="trialDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestApiDemo.Controllers.TrailsController.DeleteTrial(System.Int32)">
+            <summary>
+            delete national park detail
+            </summary>
+            <param name="id">supply id to delete detail</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -32,12 +32,46 @@ namespace RestApiDemo.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<byte[]>("Picture");
+
                     b.Property<string>("State")
                         .IsRequired();
 
                     b.HasKey("Id");
 
                     b.ToTable("nationalParks");
+                });
+
+            modelBuilder.Entity("RestApiDemo.Modals.Trial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<int>("Diffculty");
+
+                    b.Property<double>("Distance");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("NationalParkId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NationalParkId");
+
+                    b.ToTable("trial");
+                });
+
+            modelBuilder.Entity("RestApiDemo.Modals.Trial", b =>
+                {
+                    b.HasOne("RestApiDemo.Modals.NationalPark", "NationalPark")
+                        .WithMany()
+                        .HasForeignKey("NationalParkId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

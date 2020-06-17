@@ -11,8 +11,9 @@ using RestApiDemo.Repository.IRepository;
 
 namespace RestApiDemo.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/nationalpark")]
     [ApiController]
+    //[ApiExplorerSettings(GroupName = "NationalPark")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public class NationalParkController : Controller
     {

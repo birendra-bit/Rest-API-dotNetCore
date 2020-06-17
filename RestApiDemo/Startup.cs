@@ -32,6 +32,8 @@ namespace RestApiDemo
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddScoped<ITrialRepository, TrailRepository>();
+
             services.AddAutoMapper(typeof(ParkMapper));
             services.AddSwaggerGen(options =>
             {
@@ -46,6 +48,18 @@ namespace RestApiDemo
                             Name ="Birendra Bhujel"
                         }
                     });
+                //options.SwaggerDoc("Trial",
+                //   new Microsoft.OpenApi.Models.OpenApiInfo()
+                //   {
+                //       Title = "Trial Api",
+                //       Version = "1",
+                //       Description = "Rest Api with .net core",
+                //       Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                //       {
+                //           Email = "bhujelbirendra3@gmail.com",
+                //           Name = "Birendra Bhujel"
+                //       }
+                //   });
                 var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
                 options.IncludeXmlComments(cmlCommentsFullPath);
@@ -71,6 +85,7 @@ namespace RestApiDemo
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/NationalPark/swagger.json", "National Parky");
+                //options.SwaggerEndpoint("/swagger/Trial/swagger.json", "Parky Trial Api");
                 options.RoutePrefix = "";
             });
             app.UseMvc();

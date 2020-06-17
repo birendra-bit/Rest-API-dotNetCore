@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+using static RestApiDemo.Modals.Trial;
+
+namespace RestApiDemo.Modals.Dtos
+{
+    public class TrialUpdateDto
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public double Distance { get; set; }
+
+        public DiffcultyType Diffculty { get; set; }
+
+        [Required]
+        public int NationalParkId { get; set; }
+    }
+}
